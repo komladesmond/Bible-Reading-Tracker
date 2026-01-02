@@ -453,83 +453,83 @@ import { CheckCircle2, Circle, Award, Flame, BookOpen, Calendar, TrendingUp, Sta
   const quarterComplete = quarterReadings.filter(r => readings[r.day]).length;
   const quarterPercent = (quarterComplete / quarterReadings.length) * 100;
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-6">
+return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-3 sm:p-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
             Bible Reading 2026
           </h1>
-          <p className="text-gray-600">Your journey through God's Word</p>
+          <p className="text-sm sm:text-base text-gray-600">Your journey through God's Word</p>
         </div>
 
         {showCelebration && (
-          <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-bounce">
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-8 py-4 rounded-full shadow-2xl text-xl font-bold">
+          <div className="fixed top-4 sm:top-20 left-1/2 transform -translate-x-1/2 z-50 animate-bounce px-4">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full shadow-2xl text-base sm:text-xl font-bold">
               {celebrationMessage}
             </div>
           </div>
         )}
 
-        <div className="bg-white rounded-3xl shadow-2xl p-8 mb-6">
-          <div className="flex items-center justify-between mb-4">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-8 mb-4 sm:mb-6">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div className="flex items-center gap-2">
-              <TrendingUp className="text-blue-600" size={24} />
-              <span className="text-lg font-semibold text-gray-700">Overall Progress</span>
+              <TrendingUp className="text-blue-600" size={20} />
+              <span className="text-base sm:text-lg font-semibold text-gray-700">Overall Progress</span>
             </div>
-            <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <span className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               {totalRead}/365
             </span>
           </div>
           
-          <div className="relative w-full h-8 bg-gray-200 rounded-full overflow-hidden">
+          <div className="relative w-full h-6 sm:h-8 bg-gray-200 rounded-full overflow-hidden">
             <div 
               className="absolute h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-500 ease-out rounded-full"
               style={{ width: `${progressPercent}%` }}
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-sm font-bold text-white drop-shadow-lg">
+              <span className="text-xs sm:text-sm font-bold text-white drop-shadow-lg">
                 {progressPercent.toFixed(1)}%
               </span>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl shadow-xl p-6 text-white">
-            <div className="flex items-center gap-3 mb-2">
-              <Flame size={32} />
-              <span className="text-lg font-semibold">Current Streak</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div className="bg-gradient-to-br from-orange-400 to-red-500 rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 text-white">
+            <div className="flex items-center gap-2 sm:gap-3 mb-2">
+              <Flame size={24} className="sm:w-8 sm:h-8" />
+              <span className="text-sm sm:text-lg font-semibold">Current Streak</span>
             </div>
-            <p className="text-4xl font-bold">{currentStreak} days</p>
+            <p className="text-3xl sm:text-4xl font-bold">{currentStreak} days</p>
           </div>
 
-          <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-xl p-6 text-white">
-            <div className="flex items-center gap-3 mb-2">
-              <Award size={32} />
-              <span className="text-lg font-semibold">Longest Streak</span>
+          <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 text-white">
+            <div className="flex items-center gap-2 sm:gap-3 mb-2">
+              <Award size={24} className="sm:w-8 sm:h-8" />
+              <span className="text-sm sm:text-lg font-semibold">Longest Streak</span>
             </div>
-            <p className="text-4xl font-bold">{longestStreak} days</p>
+            <p className="text-3xl sm:text-4xl font-bold">{longestStreak} days</p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl shadow-xl p-6 text-white">
-            <div className="flex items-center gap-3 mb-2">
-              <BookOpen size={32} />
-              <span className="text-lg font-semibold">Days Remaining</span>
+          <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 text-white sm:col-span-2 md:col-span-1">
+            <div className="flex items-center gap-2 sm:gap-3 mb-2">
+              <BookOpen size={24} className="sm:w-8 sm:h-8" />
+              <span className="text-sm sm:text-lg font-semibold">Days Remaining</span>
             </div>
-            <p className="text-4xl font-bold">{365 - totalRead} days</p>
+            <p className="text-3xl sm:text-4xl font-bold">{365 - totalRead} days</p>
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-2xl p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-800">Reading Plan</h2>
-            <div className="flex gap-2">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Reading Plan</h2>
+            <div className="flex gap-1.5 sm:gap-2 w-full sm:w-auto overflow-x-auto pb-2 sm:pb-0">
               {[1, 2, 3, 4].map(q => (
                 <button
                   key={q}
                   onClick={() => setSelectedQuarter(q)}
-                  className={`px-6 py-2 rounded-xl font-semibold transition-all ${
+                  className={`px-4 sm:px-6 py-2 rounded-lg sm:rounded-xl font-semibold transition-all whitespace-nowrap ${
                     selectedQuarter === q
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
                       : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
@@ -541,12 +541,12 @@ import { CheckCircle2, Circle, Award, Flame, BookOpen, Calendar, TrendingUp, Sta
             </div>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-4 sm:mb-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-semibold text-gray-600">Quarter {selectedQuarter} Progress</span>
-              <span className="text-sm font-bold text-purple-600">{quarterComplete}/{quarterReadings.length}</span>
+              <span className="text-xs sm:text-sm font-semibold text-gray-600">Quarter {selectedQuarter} Progress</span>
+              <span className="text-xs sm:text-sm font-bold text-purple-600">{quarterComplete}/{quarterReadings.length}</span>
             </div>
-            <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+            <div className="w-full h-2.5 sm:h-3 bg-gray-200 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500"
                 style={{ width: `${quarterPercent}%` }}
@@ -554,34 +554,34 @@ import { CheckCircle2, Circle, Award, Flame, BookOpen, Calendar, TrendingUp, Sta
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto pr-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 max-h-[500px] sm:max-h-[600px] overflow-y-auto pr-1 sm:pr-2">
             {quarterReadings.map((item) => (
               <div
                 key={item.day}
                 onClick={() => toggleReading(item.day)}
-                className={`cursor-pointer p-4 rounded-xl transition-all duration-300 transform hover:scale-105 ${
+                className={`cursor-pointer p-3 sm:p-4 rounded-lg sm:rounded-xl transition-all duration-300 transform active:scale-95 sm:hover:scale-105 ${
                   readings[item.day]
                     ? 'bg-gradient-to-r from-green-400 to-emerald-500 shadow-lg'
                     : 'bg-gray-100 hover:bg-gray-200 hover:shadow-md'
                 }`}
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar size={16} className={readings[item.day] ? 'text-white' : 'text-gray-500'} />
-                      <span className={`text-sm font-semibold ${readings[item.day] ? 'text-white' : 'text-gray-600'}`}>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                      <Calendar size={14} className={`flex-shrink-0 sm:w-4 sm:h-4 ${readings[item.day] ? 'text-white' : 'text-gray-500'}`} />
+                      <span className={`text-xs sm:text-sm font-semibold truncate ${readings[item.day] ? 'text-white' : 'text-gray-600'}`}>
                         Day {item.day} - {item.date}
                       </span>
                     </div>
-                    <p className={`text-sm font-medium ${readings[item.day] ? 'text-white' : 'text-gray-700'}`}>
+                    <p className={`text-xs sm:text-sm font-medium ${readings[item.day] ? 'text-white' : 'text-gray-700'}`}>
                       {item.reading}
                     </p>
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-2 sm:ml-3 flex-shrink-0">
                     {readings[item.day] ? (
-                      <CheckCircle2 className="text-white" size={28} />
+                      <CheckCircle2 className="text-white" size={24} />
                     ) : (
-                      <Circle className="text-gray-400" size={28} />
+                      <Circle className="text-gray-400" size={24} />
                     )}
                   </div>
                 </div>
@@ -591,11 +591,11 @@ import { CheckCircle2, Circle, Award, Flame, BookOpen, Calendar, TrendingUp, Sta
         </div>
 
         {totalRead === 365 && (
-          <div className="mt-8 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-3xl shadow-2xl p-12 text-center">
-            <Star className="mx-auto mb-4 text-white" size={64} />
-            <h2 className="text-4xl font-bold text-white mb-4">🎉 Congratulations! 🎉</h2>
-            <p className="text-xl text-white">You've completed the entire Bible in 2026!</p>
-            <p className="text-lg text-white mt-2">What an incredible journey through God's Word!</p>
+          <div className="mt-6 sm:mt-8 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-12 text-center">
+            <Star className="mx-auto mb-3 sm:mb-4 text-white" size={48} />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">🎉 Congratulations! 🎉</h2>
+            <p className="text-lg sm:text-xl text-white">You've completed the entire Bible in 2026!</p>
+            <p className="text-base sm:text-lg text-white mt-2">What an incredible journey through God's Word!</p>
           </div>
         )}
       </div>
